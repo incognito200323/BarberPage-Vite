@@ -9,19 +9,19 @@ const servicios = [
   {
     id: 2,
     name: 'Corte Varón 2',
-    price: 10000,
+    price: 15000,
     image: '/Imagenes/imagen2.webp'
   },
   {
     id: 3,
     name: 'Corte Varón 3',
-    price: 10000,
+    price: 20000,
     image: '/Imagenes/imagen3.webp'
   },
   {
     id: 4,
     name: 'Corte Varón 4',
-    price: 10000,
+    price: 25000,
     image: '/Imagenes/imagen4.webp'
   }
 ];

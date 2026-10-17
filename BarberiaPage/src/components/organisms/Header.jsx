@@ -11,7 +11,7 @@ export default function Header() {
       <nav className="nav-header">
         <Link to="/">Inicio</Link>
         <Link to="/reserva">Reservar Horas</Link>
-        <Link to="/admin">Panel Admin</Link>
+        <Link to="/login">Inicio Sesion</Link>
       </nav>
     </header>
   );

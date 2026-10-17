@@ -12,7 +12,6 @@ export default function Home() {
         </div>
         <div>
           <Text variant="h1">Bienvenido a Glow Up</Text>
-          <Text variant="p">El mejor estilo para ti.</Text>
         </div>
       </main>
 
@@ -20,7 +19,6 @@ export default function Home() {
         <Text variant="h2">Fotos Referenciales</Text>
         <div className="contenedor-galeria">
           
-          {/* Aquí aplicamos la lógica del profesor con .map() */}
           {servicios.map((servicio) => (
             <TarjetaServicio 
               key={servicio.id} 
