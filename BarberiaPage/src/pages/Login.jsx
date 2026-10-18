@@ -1,9 +1,11 @@
-import FormularioLogin from '../components/organisms/FormularioLogin';
+import FormularioLogin  from '../components/organisms/FormularioLogin';
 
-export default function Login() {
+export default function Login({ setEsAdmin, setSesionIniciada }) {
   return (
     <>
-      <FormularioLogin />
+      <FormularioLogin
+      setEsAdmin={setEsAdmin} 
+      setSesionIniciada={setSesionIniciada} />
     </>
   );
 }

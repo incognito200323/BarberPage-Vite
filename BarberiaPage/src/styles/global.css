@@ -12,7 +12,8 @@ body {
     display: flex;
     flex-direction: column;
 }
-header{
+
+header {
     max-width: 1200px;
     width: 90%;
     margin: 20px auto;
@@ -26,7 +27,7 @@ header{
     box-sizing: border-box;
 }
 
-.cuerpo-main{
+.cuerpo-main {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,28 +37,28 @@ header{
     padding: 0 2rem;
 }
 
-header a{
+header a {
     text-decoration: none;
     color: #000;
 }
 
-header a:hover{
+header a:hover {
     color: darkgoldenrod;
 }
 
-.nav-header{
+.nav-header {
     display: flex;
     gap: 25px;
     align-items: center;
 }
 
-.titulo{
+.titulo {
     color: #000;
     font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
 }
 
-.imagen-main{
+.imagen-main {
     width: 100%;
     max-width: 700px;
     height: auto;
@@ -65,15 +66,15 @@ header a:hover{
     object-fit: cover;
 }
 
-.imagen-contenedor{
+.imagen-contenedor {
     max-width: 50%;
 }
 
-h1{
-    font-family:serif
+h1 {
+    font-family: serif;
 }
 
-footer{
+footer {
     background-color: #000;
     color: #ffffff;
     text-align: center;
@@ -82,14 +83,15 @@ footer{
     margin-top: auto;
 }
 
-.galeria-fotos{
+
+.galeria-fotos {
     max-width: 1200px;
     width: 90%;
     margin: 40px auto;
     text-align: center;
 }
 
-.galeria-fotos p{
+.galeria-fotos p {
     font-size: large;
     margin-bottom: 20px;   
 }
@@ -102,6 +104,7 @@ footer{
     margin-top: 20px;
 }
 
+/* Tarjeta Base */
 .tarjeta-servicio {
     position: relative;
     width: 250px;
@@ -110,13 +113,15 @@ footer{
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #eaeaea;
 }
 
 .img-servicio {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.6s ease;
 }
 
 .info-servicio {
@@ -127,92 +132,84 @@ footer{
     height: 100%;
     background: rgba(0, 0, 0, 0.75);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.info-servicio p {
-    color: darkgoldenrod;
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin: 0;
-}
-
-.tarjeta-servicio:hover .img-servicio {
-    transform: scale(1.15);
-}
-
-.tarjeta-servicio:hover .info-servicio {
-    opacity: 1;
-}
-.reserva-main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
+    transition: opacity 0.5s ease;
+    padding: 20px;
     box-sizing: border-box;
 }
 
-.campo{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
-    padding: 0;
-}
-
-.campo label{
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-.formulario-seccion{
-    background-color: #1a1a1a;
+.nombre-corte {
     color: #ffffff;
-    border-radius: 12px;
-    padding: 40px;
-    max-width: 480px;
-    width: 90%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border: 1px solid #333;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
 }
 
-.formulario-seccion h2{
+.descripcion-detallada {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 15px;
+    display: none;
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-family: 'Times New Roman', Times, serif;
-    color: darkgoldenrod;
-    font-size: 1.8rem;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.2s;
 }
 
-.btn-confirmar:hover{
-    background-color: darkgoldenrod;
+/* Hover en tarjeta normal */
+.tarjeta-servicio:not(.expandida):hover .img-servicio {
+    transform: scale(1.15);
 }
 
-.btn-confirmar{
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-family: 'Times New Roman', Times, serif;
+.tarjeta-servicio:not(.expandida):hover .info-servicio {
+    opacity: 1;
 }
 
-.login-cuerpo {
-    background-color: #fff;
+
+.tarjeta-servicio.expandida {
+    width: 100%;
+    max-width: 500px; 
+    min-height: 450px; 
+    height: auto; 
+    z-index: 10;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    border-color: #111111;
+}
+
+.tarjeta-servicio.expandida .info-servicio {
+    opacity: 1;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.85); 
+}
+
+.tarjeta-servicio.expandida .nombre-corte {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: darkgoldenrod; /* Mantenemos tu detalle dorado aquí si lo deseas, o cámbialo a #fff */
+}
+
+.tarjeta-servicio.expandida .descripcion-detallada {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex : 1;
-    width: 100%;
-    margin: 0;
-    font-family: sans-serif;
-    color: #fff;
+    opacity: 1;
 }
 
-#header {
+
+.login-cuerpo, 
+.reserva-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #fdfdfd;
+    padding: 40px 20px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .login-main {
@@ -224,16 +221,33 @@ footer{
     padding: 20px 0;
 }
 
-.formulario-login {
-    background-color: #161616;
+.formulario-login, 
+.formulario-seccion {
+    background-color: #000000;
     padding: 40px 30px;
-    border-radius: 12px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
     width: 100%;
-    max-width: 380px;
+    max-width: 420px;
     text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
     box-sizing: border-box;
-    border: 1px solid #333;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    font-family: sans-serif;
+}
+
+.formulario-seccion {
+    max-width: 500px;
+}
+
+.formulario-login h2, 
+.formulario-seccion h2 {
+    color: #fffefe;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+    font-family: sans-serif;
 }
 
 .formulario-login img {
@@ -241,32 +255,71 @@ footer{
     height: 70px;
     border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 20px;
 }
 
-.formulario-login h2 {
-    color: darkgoldenrod;
-    margin: 15px 0;
-}
-
-.login-campo {
+.login-campo, 
+.campo {
+    display: flex;
+    flex-direction: column;
     text-align: left;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
+    gap: 0;
 }
 
-.login-campo label {
-    display: block;
+.login-campo label, 
+.campo label {
     font-size: 0.8rem;
-    margin-bottom: 4px;
+    color: #666666;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
 }
 
-.login-campo input {
+.login-campo input, 
+.campo input {
     width: 100%;
-    padding: 10px;
-    background-color: #222;
-    border-radius: 6px;
-    color: #fff;
-    border: 1px solid #444;
+    padding: 14px;
+    font-size: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #fafafa;
+    color: #111111;
+    transition: all 0.3s ease;
     box-sizing: border-box;
+}
+
+.login-campo input:focus, 
+.campo input:focus {
+    outline: none;
+    border-color: #111111;
+    background-color: #ffffff;
+}
+
+.btn-login, 
+.btn-confirmar {
+    width: 100%;
+    padding: 15px;
+    background-color: #111111;
+    color: #ffffff;
+    border: 1px solid #111111;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+
+.btn-login:hover, 
+.btn-confirmar:hover {
+    background-color: #ffffff;
+    color: #111111;
 }
 
 .opciones-login {
@@ -275,66 +328,60 @@ footer{
 }
 
 .contraseña {
-    color: #aaa;
+    color: #777777;
     font-size: 0.8rem;
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .contraseña:hover {
-    color: darkgoldenrod;
+    color: #111111;
     text-decoration: underline;
-}
-
-.btn-login {
-    width: 100%;
-    padding: 12px;
-    background-color: darkgoldenrod;
-    border: none;
-    border-radius: 26px;
-    color: #000;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 .registro-login {
-    font-size: 0.8rem;
-    margin-top: 15px;
-    color: #888;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #555555;
+    border-top: 1px solid #eaeaea;
+    padding-top: 20px;
 }
 
 .registro-login a {
-    color: darkgoldenrod;
+    color: #777777;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
 }
 
 .registro-login a:hover {
+    color: #111111;
     text-decoration: underline;
 }
-
-@media(max-width: 768px){
-    header{
+@media(max-width: 768px) {
+    header {
         flex-direction: column;
         height: auto;
         padding: 15px;
         gap: 15px;
     }
     
-    .nav-header{    
+    .nav-header {    
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .titulo{    
+    .titulo {    
         font-size: 24px;
     }
 
-    .cuerpo-main{    
+    .cuerpo-main {    
         flex-direction: column;
         text-align: center;
         padding: 0.1rem;
     }
 
-    .imagen-contenedor{
+    .imagen-contenedor {
         max-width: 100%;
     }
 
@@ -343,15 +390,28 @@ footer{
         align-items: center;
     }
 
+    /* Tarjeta Normal en Móvil */
     .tarjeta-servicio {
         width: 100%;
         max-width: 300px;
-        height: auto;
-        aspect-ratio: 1 / 1; 
+        height: 300px; 
+    }
+
+    /* Tarjeta Expandida en Móvil */
+    .tarjeta-servicio.expandida {
+        width: 100%;
+        max-width: 100%; 
+        min-height: 400px; 
+        height: auto; 
+        aspect-ratio: auto; 
+    }
+
+    .tarjeta-servicio.expandida .nombre-corte {
+        font-size: 1.6rem;
     }
 
     .formulario-seccion,
-    .formulario-login{
+    .formulario-login {
         padding: 30px 20px;
     }
 }

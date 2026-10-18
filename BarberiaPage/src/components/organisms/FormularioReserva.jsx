@@ -6,7 +6,6 @@ export default function FormularioReserva() {
   const [precioBarba, setPrecioBarba] = useState("15000");
   const [serviciosExtra, setServiciosExtra] = useState([]);
 
-  // useEffect se ejecuta automáticamente cuando el formulario aparece en pantalla
   useEffect(() => {
     const pPelo = localStorage.getItem("precioPelo") || "10000";
     const pBarba = localStorage.getItem("precioBarba") || "15000";
