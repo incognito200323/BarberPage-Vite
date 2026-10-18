@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+*, *::before, *::after {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
 #root {
     display: flex;
     flex-direction: column;
@@ -11,6 +16,9 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    color: #111111;
+    -webkit-font-smoothing: antialiased;
 }
 
 header {
@@ -55,7 +63,8 @@ header a:hover {
 .titulo {
     color: #000;
     font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .imagen-main {
@@ -71,7 +80,8 @@ header a:hover {
 }
 
 h1 {
-    font-family: serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 footer {
@@ -82,8 +92,6 @@ footer {
     width: 100%;
     margin-top: auto;
 }
-
-
 .galeria-fotos {
     max-width: 1200px;
     width: 90%;
@@ -169,7 +177,6 @@ footer {
     opacity: 1;
 }
 
-
 .tarjeta-servicio.expandida {
     width: 100%;
     max-width: 500px; 
@@ -189,7 +196,7 @@ footer {
 .tarjeta-servicio.expandida .nombre-corte {
     font-size: 2rem;
     margin-bottom: 15px;
-    color: darkgoldenrod; /* Mantenemos tu detalle dorado aquí si lo deseas, o cámbialo a #fff */
+    color: darkgoldenrod;
 }
 
 .tarjeta-servicio.expandida .descripcion-detallada {
@@ -198,7 +205,6 @@ footer {
     align-items: center;
     opacity: 1;
 }
-
 
 .login-cuerpo, 
 .reserva-main {
@@ -232,7 +238,6 @@ footer {
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 .formulario-seccion {
@@ -247,7 +252,6 @@ footer {
     margin-bottom: 30px;
     font-size: 1.6rem;
     letter-spacing: -0.5px;
-    font-family: sans-serif;
 }
 
 .formulario-login img {
@@ -313,7 +317,6 @@ footer {
     margin-top: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: sans-serif;
 }
 
 .btn-login:hover, 
@@ -358,6 +361,7 @@ footer {
     color: #111111;
     text-decoration: underline;
 }
+
 @media(max-width: 768px) {
     header {
         flex-direction: column;

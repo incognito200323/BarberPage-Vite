@@ -9,11 +9,30 @@ export default function FormularioRegistro({ setSesionIniciada }) {
 
   const handleRegistro = (e) => {
     e.preventDefault();
-    alert(`¡Cuenta creada con éxito para ${nombre}!`);
-    if (setSesionIniciada) setSesionIniciada(true); 
-    navigate("/"); 
-  };
+// 1. Validar nombre/usuario
+    if (nombre.trim().length < 3) {
+      alert("Por favor, ingresa un nombre o usuario válido (mínimo 3 caracteres).");
+      return;
+    }
 
+    // 2. Validar formato de correo estricto
+    const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (!regexCorreo.test(email.trim())) {
+      alert("Ingresa un correo electrónico válido (ejemplo: cliente@correo.com).");
+      return;
+    }
+
+    // 3. Validar contraseña
+    if (password.length < 6) {
+      alert("La contraseña debe tener al menos 6 caracteres.");
+      return;
+    }
+
+    // Si todo está correcto, procede a guardar/registrar
+    alert("¡Cuenta registrada con éxito!");
+    if (setSesionIniciada) setSesionIniciada(true);
+    navigate("/");
+  };
   return (
     <div className="login-cuerpo">
       <main className="login-main">
