@@ -7,6 +7,7 @@ export default function Home() {
   // Estado para controlar qué tarjeta está expandida 
   const [selectedService, setSelectedService] = useState(null);
 
+  // Función que alterna el estado de expansión. Si se hace clic en la misma, se cierra
   const handleToggleSelect = (id) => {
     setSelectedService(selectedService === id ? null : id);
   };

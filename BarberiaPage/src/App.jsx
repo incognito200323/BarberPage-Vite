@@ -12,7 +12,8 @@ function App() {
   const [esAdmin, setEsAdmin] = useState(false);
   const [sesionIniciada, setSesionIniciada] = useState(false);
   const navigate = useNavigate();
-
+  
+// Función para cerrar sesión y restaurar los estados por defecto
   const handleLogout = () => {
     setEsAdmin(false);
     setSesionIniciada(false);

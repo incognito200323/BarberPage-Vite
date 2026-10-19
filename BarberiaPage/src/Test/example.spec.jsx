@@ -5,6 +5,7 @@ import TarjetaServicio from '../components/molecules/TarjetaServicio';
 
 describe('Pruebas Unitarias - Componentes', () => {
 
+  // Prueba 1: Verifica el Renderizado Condicional del Header para el rol Administrador
   it('1. El Header debe mostrar "Panel Admin" si el usuario es administrador', () => {
     render(
       <MemoryRouter>
@@ -16,7 +17,7 @@ describe('Pruebas Unitarias - Componentes', () => {
     // Usamos truthy para verificar que el elemento se encontró exitosamente
     expect(enlaceAdmin).toBeTruthy();
   });
-
+  // Prueba 2: Verifica el comportamiento por defecto para un Cliente
   it('2. El Header debe mostrar "Reservar" si es un cliente normal', () => {
     render(
       <MemoryRouter>
@@ -27,7 +28,7 @@ describe('Pruebas Unitarias - Componentes', () => {
     const enlaceReserva = screen.getByText(/Reserva Tu hora/i);
     expect(enlaceReserva).toBeTruthy();
   });
-
+  // Prueba 3: Verifica el paso de props en un componente Atómico/Molecular
   it('3. La TarjetaServicio debe mostrar el precio correctamente', () => {
     render(
       <TarjetaServicio 
